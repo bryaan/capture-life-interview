@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "f656bbbb-42ea-47d8-86ca-b71131294e3e",
+		"name": "capture-life",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Blog Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/blog-posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blog-posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Blog Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"My First Blog Post\",\n  \"author\": \"Bryan Rivera\",\n  \"content\": \"My awesome interview experience with Capture Life!\",\n  \"urlName\": \"my-first-blog-post\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/blog-post",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blog-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Blog Post 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/blog-post/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blog-post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Blog Post 1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"My Coding Interview\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/blog-post/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blog-post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Blog Post 1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/blog-post/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blog-post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Comment on Blog Post 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n    \"parentId\": 2,\n    \"parentType\": 1,\n    \"author\": \"Bryan Rivera\",\n    \"content\": \"This is an interesting blog post!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/comments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create SubComment on Comment 1 for BlogPost 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"parentId\": 1,\n    \"parentType\": 2,\n    \"author\": \"Bryan Rivera\",\n    \"content\": \"Threaded Comment 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/comments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create SubComment on Comment 2 for BlogPost 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"parentId\": 2,\n    \"parentType\": 2,\n    \"author\": \"Bryan Rivera\",\n    \"content\": \"This is an interesting blog post!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/comments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments for Blog Post 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/comments/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update SubComment 2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"author\": \"Mr. Bryan\",\n    \"content\": \"Updated Comment\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/comments/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete SubComment 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/comments/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
